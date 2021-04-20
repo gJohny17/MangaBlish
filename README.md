@@ -1,0 +1,2 @@
+# MangaBlish
+MangaHosting Web Application
