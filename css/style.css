@@ -1,0 +1,64 @@
+/* Carousel/ Image Slider*/
+.carousel-inner{
+    margin: 0px auto; 
+    text-align: center;
+    width: fit-content;
+  }
+  
+  
+  
+  
+  /* Latest Updates */
+  
+  .col-12{
+    background: #6ac2ac;
+    padding-left: 40%;
+    font-style: italic;
+    
+  }
+  
+  
+  
+    
+  
+  
+  /* Cards */
+  .col-md-4{
+    padding-left: 8%;
+  
+  }
+  
+  .card1{
+  width: 70%;
+  height: 105%;
+  padding-top: 10%;
+  }
+  
+  .card2{
+    width: 70%;
+    height: 105%;
+    padding-top: 10%;
+    }
+  
+  .card-img-top{
+  width: 100%;
+  height: 50%;
+  }
+  
+  /* Jumbotron */
+  
+  #para1{
+    font-family: 'Times New Roman', Times, serif
+  }
+  
+  #signbtn{
+    font-size: 60%;
+    background: #6ac2ac;
+  
+  }
+  
+  #loginbtn{
+    font-size: 60%;
+    background: #6ac2ac;
+  
+  }

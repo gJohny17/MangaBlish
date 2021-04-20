@@ -1,0 +1,20 @@
+{
+  "name": "mangablish",
+  "version": "1.0.0",
+  "description": "Manga Publishing Web application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sass ./sass/style.scss style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gJohny17/MangaBlish.git"
+  },
+  "author": "Group 9",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gJohny17/MangaBlish/issues"
+  },
+  "homepage": "https://github.com/gJohny17/MangaBlish#readme"
+}

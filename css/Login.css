@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* Style the navigation bar */
+.navbar {
+    width: 100%;
+    background-color: #397a69;
+    overflow: auto;
+  }
+  
+  /* Navbar links */
+  .navbar a {
+    float: left;
+    text-align: center;
+    padding: 12px;
+    color: #f1f1f1;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Navbar links on mouse-over */
+  .navbar a:hover {
+    background-color: #000;
+  }
+  
+  /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+  @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+    }
+
+    
+  }
+.sec1{ 
+    width: 100%;
+    height: 100vh;
+    background: hsl(219, 14%, 37%);
+    display: flex;
+    justify-content: center;
+    align-items:center ;    
+}
+
+.form1{
+    width: 25%;
+    background: #397a69;
+    padding: 60px 20px;
+    border-radius: 8px;
+    color: #f1f1f1;
+    font-size: 80%
+    
+}
+
+.bg-light {
+    background-color: #439984!important;
+}
+
+
+.formtitle {
+
+    text-align: center;
+}
+
+#loginbtn {
+    background: #f1f1f1;
+    color: #57a894;
+}
+
+
+/* Footer*/
+.foot2{
+position: absolute;
+bottom: -8%;
+width: 100%;
+font-size: 80%;
+text-align: center;
+background: #397a69;
+color: #f1f1f1;
+}
