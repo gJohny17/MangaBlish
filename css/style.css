@@ -20,7 +20,9 @@
   
   
     
-  
+  .navbar a {
+    color: white;
+  }
   
   /* Cards */
   .col-md-4{
