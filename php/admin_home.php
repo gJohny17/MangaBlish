@@ -1,4 +1,21 @@
+<?php
+session_start();
+include 'DBController.php';
+    if(isset($_SESSION['user_data'])){
+        if($_SESSION['user_data']['usertype']!=1){
+            header("Location:user_home.php");
+        }
+        $data=array();
+        $sql = mysqli_query($con, "select * from users where usertype ='2'");
+        while($row=mysqli_fetch_assoc($sql)){
+            array_push($data,$row);
+        }
 
+include 'addAuthor.php';
+include 'deleteAuthor.php';
+
+
+?>
 
 <!doctype html>
 <html lang="en">
@@ -19,8 +36,60 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>
 		
-		 <link rel="stylesheet" href="/style.css">
+		 <link rel="stylesheet" href="../style.css">
   </head>
+
+    <!-- Modal Add Author Start -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="addCategory" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModal">Add Author</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <form  method="POST">
+                    <div class="modal-body">
+                        <div class="user-details">
+                            <div class="input-box">
+                                <span class="details">Author Name</span>
+                                <input type="text" name="name" placeholder="Full Name">                        
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Email</span>
+                                <input type="email" name="email" placeholder="Email">                        
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Username</span>
+                                <input type="text" name="username" placeholder="Username">                        
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Password</span>
+                                <input type="password" name="password" placeholder="Password">                        
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Type</span>
+                                <input type="text" name="usertype" placeholder="Type">                        
+                            </div>
+                        </div>           
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" name="add_author"class="btn btn-success">Add Author</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>                        
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!-- Modal Add Author End --> 
+
+
+    <?php if(isset($_REQUEST['error'])){ ?>
+          <div class="col-lg-12">
+                <span class="alert alert-danger" style="display:block;"><?php echo $_REQUEST['error'] ?></span>
+          </div>
+          <?php } ?>
 
   <body>
       <div id="wrapper">
@@ -142,38 +211,38 @@
                       <!-- Page Heading -->
                           <!-- column -->
                           <div class="col-md-12 mt-4">
+                              <div class="float-right">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+                                Add Authors
+                                </button>
+                              </div>                              
                               <div class="card">
                                   <div class="card-body">
                                     <div class="table-responsive">                                      
                                       <table style="width:100%;" id="filtertable" class="table cust-datatable dataDisplay no-footer">
                                           <thead>
                                               <tr class="tab-row">
-                                                  <th>Manga ID</th>                                        
-                                                  <th>Manga Name</th>                                        
-                                                  <th>Manga Description</th> 
-                                                  <th>Manga Author</th>
-                                                  <th>Edit Manga</th>                                        
-                                                  <th>Delete Manga</th>                                        
+                                                  <th>Author ID</th>                                        
+                                                  <th>Author Name</th>                                        
+                                                  <th>Author Email</th> 
+                                                  <th>Author Username</th>               
+                                                  <th>Delete Author</th>                                        
                                               </tr>
                                           </thead>
                                           <tbody>
+                                              <?php
+                                              $i=1; 
+                                                foreach ($data as $d){
+                                              ?>  
                                               <tr class="tab-row">
-                                                  <td class="td-data">1</td>
-                                                  <td class="td-data">Filer</td>                                        
-                                                  <td class="td-data">Lorem ipsum dolor sit amet consectetur, adipisicing elit...</td>                                 
-                                                  <td class="td-data">Lorem ipsum dolor sit amet consectetur, adipisicing elit...</td>                                 
-                                                  <td class="td-data text-center"><a class="pen" data-toggle="modal" data-target="#editProducts" href="#"><span class="fas fa-pen"></span></a></td>                                                                                                                      
-                                                  <td class="td-data text-center"><a class="trash"href="#"><span class="fas fa-trash"></span></a></td>
-                                              </tr>            
-                                              <tr class="tab-row">
-                                                  <td class="td-data">2</td>
-                                                  <td class="td-data">Filer</td>                                        
-                                                  <td class="td-data">Lorem ipsum dolor sit amet consectetur, adipisicing elit...</td>                                 
-                                                  <td class="td-data">Lorem ipsum dolor sit amet consectetur, adipisicing elit...</td>                                 
-                                                  <td class="td-data text-center"><a class="pen" data-toggle="modal" data-target="#editProducts" href="#"><span class="fas fa-pen"></span></a></td>                                                                                                                      
-                                                  <td class="td-data text-center"><a class="trash"href="#"><span class="fas fa-trash"></span></a></td>
-                                              </tr>          
-                                                                    
+                                                <td class="td-data"><?php echo $i++; ?></td>
+                                                <td class="td-data"><?php echo $d['name']; ?></td>
+                                                <td class="td-data"><?php echo $d['email']; ?></td>
+                                                <td class="td-data"><?php echo $d['username']; ?></td>
+                                                <td class="td-data text-center"><a href="deleteAuthor.php?delete_id=<?php echo $d['user_id'];?>" class="trash"><span class="fas fa-trash"></span></a></td>
+                                              </tr> 
+                                              <?php } ?>                
                                           </tbody>
                                       </table>
                                   </div>   
@@ -254,3 +323,11 @@ $('#bar').click(function(){
   
   </body>
 </html>
+
+<?php
+    }
+    else
+        {
+                "Location:index.php?error=Unauthorized Access";
+        }
+?>

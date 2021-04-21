@@ -1,42 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device=width, initial=scale=1">
-        <title>MangaBlish: Read Your Favorite Manga Here</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-        <link href="/css/style.css" rel="stylesheet">
-
-
-    </head>
-<body>      
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <ul class="navbar-nav ml auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home</a>
-            </li>
-    
-            <li class="nav-item">
-                <a class="nav-link" href="#">Admin</a>
-            </li>
-    
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-            </li>
-    
-            <li class="nav-item">
-                <a class="nav-link" href="#">Profile</a>
-            </li>
-        </ul>
-      </div>
-    </div>
-</nav>
+<?php 
+    // include header.php file
+    include('header.php');    
+?>
 
 <!-- Carousel/Image Slider -->
 <div id="slides" class="carousel slide" data-ride="carousel">
@@ -48,7 +13,7 @@
 </ul>
 <div class="carousel-inner">
     <div class="carousel-item active">
-        <img src="../images/logo2.png" alt="logo2">
+        <img src="../images/logo2.png" alt="">
         <div class="carousel-caption">       
     </div>
     </div>
@@ -107,16 +72,16 @@
 <!-- First Card -->
 <div class="container-fluid padding">
     <div class="row padding">
-        <div class="col-md-4">
-         <div class="card1">
-            <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/thumb/1/15/DanMachi_light_novel_volume_1_cover.jpg/220px-DanMachi_light_novel_volume_1_cover.jpg" >
-            <div class="card-body">
-            <h4 class="card-title">Manga Title</h4>
-            <p class="card-text">Chapter xx</p>
-            <a href="#" class="btn btn-outline-secondary">Read Chapter</a>
-            </div>
-         </div>   
-        </div>
+    <div class="col-md-4">
+            <div class="card2">
+               <img class="card-img-top" src="../images/logo2.png">
+               <div class="card-body">
+               <h4 class="card-title">Manga Title</h4>
+               <p class="card-text">Chapter xx</p>
+               <a href="#" class="btn btn-outline-secondary">Read Chapter</a>
+               </div>
+            </div>   
+           </div>
 
         <div class="col-md-4">
             <div class="card1">
@@ -127,28 +92,27 @@
                <a href="#" class="btn btn-outline-secondary">Read Chapter</a>
                </div>
             </div>   
-        </div>
+           </div>
 
-        <div class="col-md-4">
-            <div class="card1">
-               <img class="card-img-top" src="../images/log.png">
+           <div class="col-md-4">
+            <div class="card2">
+               <img class="card-img-top" src="../images/logo2.png">
                <div class="card-body">
                <h4 class="card-title">Manga Title</h4>
                <p class="card-text">Chapter xx</p>
                <a href="#" class="btn btn-outline-secondary">Read Chapter</a>
                </div>
             </div>   
-        </div>
+           </div>
 
     </div>
 </div>
 
-<!-- First Card  End -->
-
-<!-- 2nd Card -->
+<!-- Lower  Smaller Cards Start -->
 <div class="container-fluid padding">
     <div class="row padding">
-        <div class="col-md-4">
+        
+           <div class="col-md-4">
             <div class="card2">
                <img class="card-img-top" src="../images/logo2.png">
                <div class="card-body">
@@ -169,7 +133,6 @@
                </div>
             </div>   
            </div>
-
            <div class="col-md-4">
             <div class="card2">
                <img class="card-img-top" src="../images/logo2.png">
@@ -182,13 +145,9 @@
            </div>
     </div>
 </div>
+<!-- Lower  Smaller Cards Start -->
 
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-            <!-- Jquery, Popper.js and Bootsrap.js-->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
-            <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-
-    </body>
-</html>
+<?php 
+    // include header.php file
+    include('footer.php');    
+?>
