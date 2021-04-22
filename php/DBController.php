@@ -6,7 +6,7 @@ $pw = '';
 $database = 'mangablish';
 
 $con=mysqli_connect($host,$user,$pw,$database);
-if(!$con){
+if(!$conn){
 	
 	die("Failed to Establish Database Connection");
 

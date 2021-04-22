@@ -17,7 +17,6 @@ if(isset($_REQUEST['email']) && isset($_REQUEST['password'])){
 		else{
 			header("Location:user_home.php");
 		}
-
 	}
 	else{
 		header("Location:index.php?error=Invalid Login Details");		
